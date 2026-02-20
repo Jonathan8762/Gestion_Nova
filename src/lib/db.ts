@@ -32,10 +32,10 @@ export function getStoryById(id: string): Story | undefined {
     ensureFile();
     const jsonData = fs.readFileSync(filePath, 'utf-8');
     const stories: Story[] = JSON.parse(jsonData || '[]');
-    // Forzamos comparación de strings por si acaso
+    
+    // Convertimos ambos a string para evitar que "123" !== 123
     return stories.find((s) => String(s.id) === String(id));
   } catch (error) {
-    console.error("Error leyendo la base de datos:", error);
     return undefined;
   }
 }
@@ -62,24 +62,28 @@ export function addChapterToStory(storyId: string, chapter: Chapter): boolean {
     const jsonData = fs.readFileSync(filePath, 'utf-8');
     const stories: Story[] = JSON.parse(jsonData || '[]');
     
-    const index = stories.findIndex(s => String(s.id) === String(storyId));
+    // .trim() elimina espacios en blanco accidentales
+    const cleanId = String(storyId).trim();
+
+    const index = stories.findIndex(s => String(s.id).trim() === cleanId);
     
     if (index === -1) {
-      console.error(`Historia con ID ${storyId} no encontrada.`);
+      // Este log te dirá exactamente qué falló en la terminal
+      console.log(`ID buscado: "${cleanId}"`);
+      console.log(`IDs disponibles:`, stories.map(s => `"${s.id}"`));
       return false;
     }
 
-    // Aseguramos que 'chapters' sea un array (por si historias viejas no lo tienen)
+    // Si la historia no tiene el array de capítulos, lo creamos
     if (!stories[index].chapters) {
       stories[index].chapters = [];
     }
 
     stories[index].chapters.push(chapter);
-    
     fs.writeFileSync(filePath, JSON.stringify(stories, null, 2), 'utf-8');
     return true;
   } catch (error) {
-    console.error("Error al añadir capítulo:", error);
+    console.error("Error en DB:", error);
     return false;
   }
 }

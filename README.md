@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📖 Nova Historia - Biblioteca Digital Personal
 
-## Getting Started
+[![Next.js](https://img.shields.io/badge/Framework-Next.js%2015-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Styling-Tailwind%20CSS-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
+[![Agile Methodology](https://img.shields.io/badge/Methodology-Agile%20Scrum-blueviolet?style=for-the-badge)](https://en.wikipedia.org/wiki/Scrum_(software_development))
 
-First, run the development server:
+**Nova Historia** es una plataforma minimalista diseñada para escritores y lectores que buscan una experiencia de biblioteca personal limpia y eficiente. Este proyecto ha sido desarrollado bajo un marco de trabajo **Agile**, priorizando la entrega de valor continua y la iteración rápida.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🎯 Visión del Producto
+Proporcionar una herramienta de lectura y escritura digital que elimine las distracciones, permitiendo a los autores organizar sus obras por capítulos y a los lectores disfrutar de una interfaz adaptable (Modo Oscuro) con seguimiento de progreso en tiempo real.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠 Metodología de Desarrollo: Agile Scrum
 
-## Learn More
+Este proyecto se gestiona mediante ciclos iterativos para asegurar la calidad y adaptabilidad del código.
 
-To learn more about Next.js, take a look at the following resources:
+### 👥 User Stories (Historias de Usuario)
+Como usuario de Nova Historia, quiero:
+1. **Crear una Obra:** Registrar el título y sinopsis de mi nueva historia.
+2. **Escribir por Capítulos:** Añadir contenido de forma organizada a mis obras existentes.
+3. **Lectura Inmersiva:** Leer en un entorno limpio con barra de progreso y navegación lateral.
+4. **Modo Noche:** Cambiar la apariencia visual para proteger mi vista durante lecturas nocturnas.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 📋 Product Backlog
+- [x] **Sprint 1: Cimientos & Persistencia** (Estructura de datos JSON, API de historias).
+- [x] **Sprint 2: Core de Lectura** (Sidebar dinámico, navegación entre capítulos).
+- [x] **Sprint 3: Experiencia de Usuario (UX)** (Modo Oscuro, Reading Progress Bar).
+- [ ] **Sprint 4 (In Progress): Editor Avanzado** (Soporte para Markdown).
+- [ ] **Sprint 5 (Backlog): Gamificación** (Contador de palabras y tiempo de lectura).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🏗 Arquitectura del Sistema
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+El proyecto utiliza una arquitectura basada en **Next.js App Router** con persistencia en sistema de archivos local para mayor velocidad en entornos de desarrollo personal.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+### Stack Tecnológico
+- **Frontend:** React 19, Tailwind CSS (UI/UX).
+- **Backend:** Next.js 15 API Routes (Serverless ready).
+- **Storage:** JSON File System (Database-less architecture).
+- **Language:** TypeScript para robustez del código.
+
+---
+
+## 🚀 Instalación y Uso
+
+Para desplegar este proyecto localmente y comenzar tu Sprint 0:
+
+1. **Clonar el repositorio:**
+   ```bash
+   git clone [https://github.com/tu-usuario/nova-historia.git](https://github.com/tu-usuario/nova-historia.git)
