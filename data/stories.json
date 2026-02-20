@@ -1,0 +1,30 @@
+[
+  {
+    "id": "1",
+    "title": "Crónicas del Código",
+    "chapters": [
+      {
+        "id": "1",
+        "title": "El primer Bug",
+        "content": "Contenido del cap 1..."
+      },
+      {
+        "id": "2",
+        "title": "La Refactorización",
+        "content": "Contenido del cap 2..."
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "title": "Prueba desde Terminal",
+    "description": "Funciona!",
+    "chapters": []
+  },
+  {
+    "id": "1771564799730",
+    "title": "Crecer En Un nuevo Mundo",
+    "description": "Sobre el desarrollo de un nuño que es abandonado en un mundo desolado",
+    "chapters": []
+  }
+]
