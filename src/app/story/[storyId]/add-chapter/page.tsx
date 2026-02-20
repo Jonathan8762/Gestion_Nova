@@ -59,7 +59,7 @@ export default function AddChapterPage() {
         <input 
           type="text" 
           placeholder="Título del capítulo..."
-          className="w-full text-2xl font-bold p-4 bg-transparent border-b dark:border-zinc-800 outline-none dark:text-white focus:border-black dark:focus:border-white transition-colors"
+          className="w-full text-2xl font-bold p-4 bg-transparent border-b dark:border-zinc-800 outline-none dark:text-white focus:border-black dark:focus:border-white transition-colors "
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           required

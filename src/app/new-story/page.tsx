@@ -42,48 +42,64 @@ export default function NewStoryPage() {
   };
 
   return (
-    <main className="max-w-4x5 mx-auto p-10 font-sans dark:bg-zinc-900">
-      <h1 className="text-3xl font-bold mb-8 dark:text-white">Escribir Nueva Historia</h1>
+    <main className="min-h-screen max-w-2x5 mx-auto p-6 md:p-10 font-sans transition-colors duration-300 bg-white dark:bg-zinc-950">
+      <header className="mb-10">
+        <h1 className="text-3xl font-bold text-black dark:text-white">
+          Escribir Nueva Historia
+        </h1>
+        <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">
+          Define los cimientos de tu próxima gran obra.
+        </p>
+      </header>
       
-      <form onSubmit={handleSubmit} className="space-y-6">
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2 dark:text-white">Título de la obra</label>
+      <form onSubmit={handleSubmit} className="space-y-8">
+        {/* Campo de Título */}
+        <div className="space-y-2">
+          <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300">
+            Título de la obra
+          </label>
           <input 
             type="text" 
             required
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-black outline-none transition-all"
-            placeholder="Ej: El misterio del servidor caído"
+            className="w-full p-4 bg-gray-50 dark:bg-zinc-900 border border-gray-200 dark:border-zinc-800 rounded-xl outline-none focus:ring-2 focus:ring-black dark:focus:ring-white transition-all text-black dark:text-white placeholder-gray-400 dark:placeholder-gray-600"
+            placeholder="Ej: El misterio del Reino caído"
           />
         </div>
 
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2 dark:text-white">Sinopsis / Descripción</label>
+        {/* Campo de Descripción */}
+        <div className="space-y-2">
+          <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300">
+            Sinopsis / Descripción
+          </label>
           <textarea 
             required
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-            className="w-full p-3 border border-gray-300 rounded-md h-32 focus:ring-2 focus:ring-black outline-none transition-all"
+            className="w-full p-4 bg-gray-50 dark:bg-zinc-900 border border-gray-200 dark:border-zinc-800 rounded-xl h-40 outline-none focus:ring-2 focus:ring-black dark:focus:ring-white transition-all text-black dark:text-white placeholder-gray-400 dark:placeholder-gray-600 resize-none"
             placeholder="¿De qué trata tu historia?"
           />
         </div>
 
-        <button 
-          type="submit" 
-          disabled={isSubmitting}
-          className={`w-full py-3 bg-black text-white font-semibold rounded-md transition-opacity ${isSubmitting ? 'opacity-50' : 'hover:opacity-90'}`}
-        >
-          {isSubmitting ? 'Guardando...' : 'Crear Historia'}
-        </button>
+        {/* Botones de Acción */}
+        <div className="flex flex-col gap-4 pt-4">
+          <button 
+            type="submit" 
+            disabled={isSubmitting}
+            className={`w-full py-4 bg-black dark:bg-white text-white dark:text-black font-bold rounded-xl transition-all shadow-lg active:scale-[0.98] ${isSubmitting ? 'opacity-50' : 'hover:opacity-90'}`}
+          >
+            {isSubmitting ? 'Guardando...' : 'Crear Historia'}
+          </button>
 
-        <button 
-          type="button"
-          onClick={() => router.back()}
-          className="w-full text-gray-500 text-sm hover:underline"
-        >
-          Cancelar
-        </button>
+          <button 
+            type="button"
+            onClick={() => router.back()}
+            className="w-full py-2 text-gray-500 dark:text-gray-400 text-sm font-medium hover:text-black dark:hover:text-white transition-colors underline underline-offset-4"
+          >
+            Cancelar y volver
+          </button>
+        </div>
       </form>
     </main>
   );
