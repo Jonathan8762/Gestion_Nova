@@ -45,7 +45,7 @@ export default function AddChapterPage() {
   };
 
   return (
-    <main className="max-w-3xl mx-auto p-10 font-sans relative">
+    <main className="max-w-3x5 mx-auto p-10 font-sans relative dark:bg-zinc-900">
       {/* Mensaje de éxito tipo Toast */}
       {showSuccess && (
         <div className="fixed top-20 right-10 bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg z-50 animate-bounce">

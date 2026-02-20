@@ -12,7 +12,7 @@ export default async function StoryDetailPage({ params }: { params: Promise<{ st
   }
 
   return (
-    <main className="max-w-4xl mx-auto p-6 md:p-16 font-serif">
+    <main className="max-w-5x5 mx-auto p-6 md:p-16 font-serif dark:bg-zinc-900">
       {/* Botón Volver */}
       <Link href="/" className="text-sm font-sans text-gray-500 hover:text-black dark:hover:text-white mb-8 block transition-colors">
         ← Volver a la biblioteca

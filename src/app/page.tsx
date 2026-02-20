@@ -14,7 +14,7 @@ export default async function Home() {
   const stories = await getStories();
 
   return (
-    <main className="max-w-4xl mx-auto p-10 font-serif">
+    <main className="max-w-4x5 mx-auto p-10 font-serif dark:bg-zinc-900">
       <div className="flex justify-between items-center mb-12">
         <header>
           <h1 className="text-4xl font-light italic dark:text-white">Nova Historia</h1>

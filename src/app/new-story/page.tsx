@@ -42,12 +42,12 @@ export default function NewStoryPage() {
   };
 
   return (
-    <main className="max-w-xl mx-auto p-10 font-sans">
-      <h1 className="text-3xl font-bold mb-8">Escribir Nueva Historia</h1>
+    <main className="max-w-4x5 mx-auto p-10 font-sans dark:bg-zinc-900">
+      <h1 className="text-3xl font-bold mb-8 dark:text-white">Escribir Nueva Historia</h1>
       
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">Título de la obra</label>
+          <label className="block text-sm font-medium text-gray-700 mb-2 dark:text-white">Título de la obra</label>
           <input 
             type="text" 
             required
@@ -59,7 +59,7 @@ export default function NewStoryPage() {
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">Sinopsis / Descripción</label>
+          <label className="block text-sm font-medium text-gray-700 mb-2 dark:text-white">Sinopsis / Descripción</label>
           <textarea 
             required
             value={description}
