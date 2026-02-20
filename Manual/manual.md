@@ -12,6 +12,41 @@ Nova Historia es una Single Page Application (SPA) evolucionada hacia una arquit
 
 ## 2. Arquitectura del Sistema (Sprint 1: Cimientos)
 
+/nova-historia
+├── /data                # Almacenamiento persistente
+│   └── stories.json     # Base de datos local (NoSQL - JSON)
+├── /src
+│   ├── /app             # Rutas y Vistas (App Router)
+│   │   ├── /api         # Capa de Servicios Backend
+│   │   │   └── /stories
+│   │   │       ├── route.ts              # POST - Crear historia
+│   │   │       └── /[id]/chapters/route.ts # POST - Añadir capítulo
+│   │   ├── /story       # Rutas Dinámicas de Lectura
+│   │   │   └── /[storyId]
+│   │   │       ├── /chapter/[chapterNum]
+│   │   │       │   └── page.tsx          # Vista de lectura inmersiva
+│   │   │       ├── /add-chapter
+│   │   │       │   └── page.tsx          # Formulario de autoría
+│   │   │       └── page.tsx              # Portada/Índice de historia
+│   │   ├── /new-story   # Registro de obras
+│   │   │   └── page.tsx
+│   │   ├── layout.tsx   # Estructura global (Navbar & Theme)
+│   │   ├── page.tsx     # Catálogo principal (Home)
+│   │   └── globals.css  # Configuración Tailwind
+│   ├── /components      # Módulos de Interfaz Reutilizables
+│   │   ├── Navbar.tsx
+│   │   ├── ReadingProgress.tsx
+│   │   ├── Sidebar.tsx
+│   │   └── ThemeToggle.tsx
+│   └── /lib             # Utilidades de Lógica de Negocio
+│       └── db.ts        # Motor de manipulación del JSON
+├── package.json         # Gestión de dependencias
+├── tsconfig.json        # Configuración de tipado estricto
+├── postcss.config.mjs
+├── package-lock.json
+├── next.config.ts
+└── eslint.config.mjs
+
 ### 2.1. Persistencia de Datos (Data Layer)
 
 El sistema utiliza un motor de persistencia basado en File System (fs) sobre archivos JSON.
